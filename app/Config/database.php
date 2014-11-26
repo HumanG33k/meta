@@ -5,8 +5,8 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'meta',
-		'password' => 'meta',
+		'login' => 'root',
+		'password' => '',
 		'database' => 'meta',
 	);
 }

@@ -133,7 +133,7 @@ class Category extends AppModel {
 			'className' => 'News',
 			'joinTable' => 'categories_news',
 			'foreignKey' => 'category_id',
-			'associationForeignKey' => 'news_id',
+			'associationForeignKey' => 'new_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

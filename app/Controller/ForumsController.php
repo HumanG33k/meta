@@ -24,7 +24,7 @@ class ForumsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Acl', 'Auth', 'Security', 'Session');
+	public $components = array('Paginator'/*, 'Acl', 'Auth'*/, 'Security', 'Session');
 
 /**
  * index method
@@ -35,7 +35,11 @@ class ForumsController extends AppController {
 		$this->Forum->recursive = 0;
 		$this->set('forums', $this->Paginator->paginate());
 	}
-
+        public function index2() {
+		$this->Forum->recursive = 0;
+		$this->set('forums', $this->Paginator->paginate());
+	}
+        
 /**
  * view method
  *
