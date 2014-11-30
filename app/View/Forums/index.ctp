@@ -3,8 +3,8 @@
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('position'); ?></th>
+                       <!-- <th><?php echo $this->Paginator->sort('id'); ?></th>
+			<th><?php echo $this->Paginator->sort('position'); ?></th>-->
 			<th><?php echo $this->Paginator->sort('nbpost'); ?></th>
 			<th><?php echo $this->Paginator->sort('nbtread'); ?></th>
 			<th><?php echo $this->Paginator->sort('category_id'); ?></th>
@@ -17,8 +17,8 @@
 	<tbody>
 	<?php foreach ($forums as $forum): ?>
 	<tr>
-		<td><?php echo h($forum['Forum']['id']); ?>&nbsp;</td>
-		<td><?php echo h($forum['Forum']['position']); ?>&nbsp;</td>
+	<!--	<td><?php echo h($forum['Forum']['id']); ?>&nbsp;</td>
+		<td><?php echo h($forum['Forum']['position']); ?>&nbsp;</td> -->
 		<td><?php echo h($forum['Forum']['nbpost']); ?>&nbsp;</td>
 		<td><?php echo h($forum['Forum']['nbtread']); ?>&nbsp;</td>
 		<td>

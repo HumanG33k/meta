@@ -1,4 +1,4 @@
-<div class="forums view">
+<!--<div class="forums view">
 <h2><?php echo __('Forum'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
@@ -57,7 +57,7 @@
 		<li><?php echo $this->Html->link(__('List Threads'), array('controller' => 'threads', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Thread'), array('controller' => 'threads', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
+</div>-->
 <div class="related">
 	<h3><?php echo __('Related Threads'); ?></h3>
 	<?php if (!empty($forum['Thread'])): ?>

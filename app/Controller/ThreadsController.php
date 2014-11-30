@@ -35,6 +35,10 @@ class ThreadsController extends AppController {
 		$this->Thread->recursive = 0;
 		$this->set('threads', $this->Paginator->paginate());
 	}
+        public function index2() {
+		$this->Thread->recursive = 0;
+		$this->set('threads', $this->Paginator->paginate());
+	}
 
 /**
  * view method
@@ -44,6 +48,13 @@ class ThreadsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		if (!$this->Thread->exists($id)) {
+			throw new NotFoundException(__('Invalid thread'));
+		}
+		$options = array('conditions' => array('Thread.' . $this->Thread->primaryKey => $id));
+		$this->set('thread', $this->Thread->find('first', $options));
+	}
+        public function view2($id = null) {
 		if (!$this->Thread->exists($id)) {
 			throw new NotFoundException(__('Invalid thread'));
 		}

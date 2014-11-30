@@ -42,8 +42,8 @@ class Forum extends AppModel {
 		),
 		'position' => array(
 			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'rule' => array('string'),
+				'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

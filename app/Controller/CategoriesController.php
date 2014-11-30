@@ -35,6 +35,10 @@ class CategoriesController extends AppController {
 		$this->Category->recursive = 0;
 		$this->set('categories', $this->Paginator->paginate());
 	}
+        public function index2() {
+		$this->Category->recursive = 0;
+		$this->set('categories', $this->Paginator->paginate());
+	}
 
 /**
  * view method
@@ -44,6 +48,13 @@ class CategoriesController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		if (!$this->Category->exists($id)) {
+			throw new NotFoundException(__('Invalid category'));
+		}
+		$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
+		$this->set('category', $this->Category->find('first', $options));
+	}
+        public function view2($id = null) {
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}

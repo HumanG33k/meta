@@ -54,6 +54,13 @@ class ForumsController extends AppController {
 		$options = array('conditions' => array('Forum.' . $this->Forum->primaryKey => $id));
 		$this->set('forum', $this->Forum->find('first', $options));
 	}
+        public function view2($id = null) {
+		if (!$this->Forum->exists($id)) {
+			throw new NotFoundException(__('Invalid forum'));
+		}
+		$options = array('conditions' => array('Forum.' . $this->Forum->primaryKey => $id));
+		$this->set('forum', $this->Forum->find('first', $options));
+	}
 
 /**
  * add method
