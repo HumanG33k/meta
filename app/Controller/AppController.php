@@ -31,5 +31,50 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components = array('DebugKit.Toolbar');
+ 
+  
+    /**
+   * Components
+   *
+   * @var array
+   */
+  public $components = array(
+      'DebugKit.Toolbar',
+      'Session',
+      /*'Auth' => array(
+          'loginRedirect' => array('controller' => 'news', 'action' => 'index'),
+          'logoutRedirect' => array(
+              'controller' => 'news',
+              'action' => 'index'
+
+          ),
+          'authError' => 'Did you really think you are allowed to see that?',
+          'authorize' => array('Controller') // Added this line
+      ),*/
+      'Security',
+      'Paginator'
+  );
+  
+  
+      /**
+   * beforeFilter method
+   *
+   * @return void
+   */
+ /* public function beforeFilter()
+  {
+    $this->Auth->allow('display');
+  }*/
+    /**
+   * isAuthorized method
+   *
+   * @param user $user
+   * @return boolean
+   */
+  /*public function isAuthorized($user)
+  {
+    return false;
+  }*/
+  
+  
 }
