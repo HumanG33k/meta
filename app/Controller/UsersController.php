@@ -35,12 +35,12 @@ class UsersController extends AppController
    * 
    * @return void
    */
-  public function beforeFilter()
-  {
-    parent::beforeFilter();
-    // Allow users to register and logout.
-    $this->Auth->allow('add');
-  }
+//  public function beforeFilter()
+//  {
+//    parent::beforeFilter();
+//    // Allow users to register and logout.
+//    $this->Auth->allow('add','index','admin_index','view');
+//  }
 
   /**
    * isAuthorized method
@@ -48,19 +48,46 @@ class UsersController extends AppController
    * @param user $user
    * @return boolean
    */
-  public function isAuthorized($user)
+//  public function isAuthorized($user)
+//  {
+//    // Admin can access every action
+//    if (parent::isAdmin($user) && in_array($this->action, array('index', 'view', 'logout', 'delete')))
+//    {
+//      return true;
+//    }
+//    if (in_array($this->action, array('edit', 'view', 'logout')))
+//    {
+//      return true;
+//    }
+//    // Default deny
+//    return parent::isAuthorized($user);
+//  }
+
+//  public function beforeFilter()
+//  {
+//    parent::beforeFilter();
+//// Permet aux utilisateurs de s’enregistrer et de se déconnecter
+//    $this->Auth->allow('add', 'logout', 'login');
+//  }
+
+  public function login()
   {
-    // Admin can access every action
-    if (parent::isAdmin($user) && in_array($this->action, array('index', 'view', 'logout', 'delete')))
+    if ($this->request->is('post'))
     {
-      return true;
+      if ($this->Auth->login())
+      {
+        return $this->redirect($this->Auth->redirectUrl());
+      }
+      else
+      {
+        $this->Session->setFlash(__("Nom d’user ou mot de passe invalide, réessayer"));
+      }
     }
-    if (in_array($this->action, array('edit', 'view', 'logout')))
-    {
-      return true;
-    }
-    // Default deny
-    return parent::isAuthorized($user);
+  }
+
+  public function logout()
+  {
+    return $this->redirect($this->Auth->logout());
   }
 
   /**
@@ -74,22 +101,22 @@ class UsersController extends AppController
     $this->set('users', $this->Paginator->paginate());
   }
 
-  public function login()
-  {
-    if ($this->request->is('post'))
-    {
-      if ($this->Auth->login())
-      {
-        return $this->redirect($this->Auth->redirect());
-      }
-      $this->Session->setFlash(__('Invalid username or password, try again'));
-    }
-  }
-
-  public function logout()
-  {
-    return $this->redirect($this->Auth->logout());
-  }
+//  public function login()
+//  {
+//    if ($this->request->is('post'))
+//    {
+//      if ($this->Auth->login())
+//      {
+//        return $this->redirect($this->Auth->redirectUrl());
+//      }
+//      $this->Session->setFlash(__('Invalid username or password, try again'));
+//    }
+//  }
+//
+//  public function logout()
+//  {
+//    return $this->redirect($this->Auth->logout());
+//  }
 
   /**
    * view method
@@ -122,11 +149,11 @@ class UsersController extends AppController
 
       if ($this->User->save($this->request->data))
       {
-        //connect the new user
+//connect the new user
         $id = $this->User->id;
         $this->request->data['User'] = array_merge($this->request->data['User'], array('id' => $id));
         $this->Auth->login($this->request->data['User']);
-        //create the order
+//create the order
         $this->User->Order->set(array('name' => 'default', 'user_id' => $this->Auth->user('id')));
         if ($this->User->Order->save())
         {
@@ -143,7 +170,7 @@ class UsersController extends AppController
         $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
       }
     }
-    $roles = $this->User->Role->find('list');
+    $roles = $this->User->Group->find('list');
     $this->set(compact('roles'));
   }
 
