@@ -6,6 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('opening_syntax');
+		echo $this->Form->input('opening_syntax_close');
 		echo $this->Form->input('closing_syntax');
 		echo $this->Form->input('html_type_id');
 		echo $this->Form->input('Attribute');

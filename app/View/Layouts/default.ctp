@@ -25,10 +25,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
       <?php echo $this->fetch('title'); ?>
     </title>
     <?php
-    echo $this->Html->meta('icon');
+    //echo $this->Html->meta('icon');
 
     echo $this->Html->css('cake.generic');
-
+		echo $this->Html->css('bootstrap');
+		//echo $this->Html->script('jquery-1.10.2');
+		//echo $this->Html->script('bootstrap');
+		//echo $this->Html->script('bootstrap.min');
+		//echo $this->Html->script('metasite');
+    
+    
+    
     echo $this->fetch('meta');
     echo $this->fetch('css');
     echo $this->fetch('script');
@@ -39,7 +46,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
       <header>
         <?php echo $this->element('banner'); ?>
         <?php echo $this->element('menu'); ?>
-        <?php echo $this->element('signbutton'); ?>
+        <?php //echo $this->element('signbutton'); ?>
+        <?php echo $this->element('ariane'); ?>
         <?php echo $this->element('searchbar'); ?>
       </header>
       <div id="content">
@@ -48,7 +56,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
         <?php echo $this->fetch('content'); ?>
       </div>
-      <div id="footer">
+      <footer>
         <?php
         echo $this->Html->link(
                 $this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')), 'http://www.cakephp.org/', array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
@@ -57,7 +65,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <p>
           <?php echo $cakeVersion; ?>
         </p>
-      </div>
+      </footer>
     </div>
   </body>
 </html>

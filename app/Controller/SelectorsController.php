@@ -17,14 +17,14 @@ class SelectorsController extends AppController {
  *
  * @var array
  */
-	public $helpers = array('Paginator');
+	//public $helpers = array('Paginator');
 
 /**
  * Components
  *
  * @var array
  */
-	public $components = array('Paginator', 'Acl', 'Security', 'Auth', 'Session');
+	//public $components = array('Paginator', 'Acl', 'Security', 'Auth', 'Session');
 
 /**
  * index method

@@ -94,6 +94,7 @@
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Name'); ?></th>
 		<th><?php echo __('Opening Syntax'); ?></th>
+		<th><?php echo __('Opening Syntax Close'); ?></th>
 		<th><?php echo __('Closing Syntax'); ?></th>
 		<th><?php echo __('Html Type Id'); ?></th>
 		<th><?php echo __('Created'); ?></th>
@@ -105,6 +106,7 @@
 			<td><?php echo $mark['id']; ?></td>
 			<td><?php echo $mark['name']; ?></td>
 			<td><?php echo $mark['opening_syntax']; ?></td>
+			<td><?php echo $mark['opening_syntax_close']; ?></td>
 			<td><?php echo $mark['closing_syntax']; ?></td>
 			<td><?php echo $mark['html_type_id']; ?></td>
 			<td><?php echo $mark['created']; ?></td>

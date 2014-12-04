@@ -6,6 +6,7 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('opening_syntax'); ?></th>
+			<th><?php echo $this->Paginator->sort('opening_syntax_close'); ?></th>
 			<th><?php echo $this->Paginator->sort('closing_syntax'); ?></th>
 			<th><?php echo $this->Paginator->sort('html_type_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
@@ -19,6 +20,7 @@
 		<td><?php echo h($mark['Mark']['id']); ?>&nbsp;</td>
 		<td><?php echo h($mark['Mark']['name']); ?>&nbsp;</td>
 		<td><?php echo h($mark['Mark']['opening_syntax']); ?>&nbsp;</td>
+		<td><?php echo h($mark['Mark']['opening_syntax_close']); ?>&nbsp;</td>
 		<td><?php echo h($mark['Mark']['closing_syntax']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($mark['HtmlType']['name'], array('controller' => 'html_types', 'action' => 'view', $mark['HtmlType']['id'])); ?>

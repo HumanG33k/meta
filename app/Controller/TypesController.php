@@ -24,7 +24,7 @@ class TypesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Acl', 'Auth', 'Security', 'Session');
+	//public $components = array('Paginator', 'Acl', 'Auth', 'Security', 'Session');
 
 /**
  * index method

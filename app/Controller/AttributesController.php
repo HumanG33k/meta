@@ -6,8 +6,8 @@ App::uses('AppController', 'Controller');
  * @property Attribute $Attribute
  * @property PaginatorComponent $Paginator
  * @property AclComponent $Acl
- * @property SecurityComponent $Security
  * @property AuthComponent $Auth
+ * @property SecurityComponent $Security
  * @property SessionComponent $Session
  */
 class AttributesController extends AppController {
@@ -17,14 +17,14 @@ class AttributesController extends AppController {
  *
  * @var array
  */
-	public $helpers = array('Paginator');
+	//public $helpers = array('Paginator');
 
 /**
  * Components
  *
  * @var array
  */
-	public $components = array('Paginator', 'Acl', 'Security', 'Auth', 'Session');
+	//public $components = array('Paginator', 'Acl', 'Auth', 'Security', 'Session');
 
 /**
  * index method
@@ -161,7 +161,7 @@ class AttributesController extends AppController {
 				$this->Session->setFlash(__('The attribute could not be saved. Please, try again.'));
 			}
 		}
-		$typeAttributes = $this->Attribute->TypeAttribute->find('list');
+		$typeAttributes = $this->Attribute->TypeAttributes->find('list');
 		$elements = $this->Attribute->Element->find('list');
 		$marks = $this->Attribute->Mark->find('list');
 		$this->set(compact('typeAttributes', 'elements', 'marks'));

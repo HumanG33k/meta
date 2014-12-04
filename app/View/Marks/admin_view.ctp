@@ -16,6 +16,11 @@
 			<?php echo h($mark['Mark']['opening_syntax']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Opening Syntax Close'); ?></dt>
+		<dd>
+			<?php echo h($mark['Mark']['opening_syntax_close']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Closing Syntax'); ?></dt>
 		<dd>
 			<?php echo h($mark['Mark']['closing_syntax']); ?>
@@ -37,6 +42,8 @@
 			&nbsp;
 		</dd>
 	</dl>
+
+			<?php echo ($mark['Mark']['opening_syntax']);echo ($mark['Mark']['opening_syntax_close']);echo'test'; echo ($mark['Mark']['closing_syntax']);  ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

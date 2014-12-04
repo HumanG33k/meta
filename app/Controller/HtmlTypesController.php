@@ -24,7 +24,7 @@ class HtmlTypesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Acl', 'Security', 'Auth', 'Session');
+	//public $components = array('Paginator', 'Acl', 'Security', 'Auth', 'Session');
 
 /**
  * index method

@@ -50,7 +50,7 @@ class AppController extends Controller {
           'authError' => 'Did you really think you are allowed to see that?',
           'authorize' => array('Controller') // Added this line
       ),*/
-      'Security',
+      //'Security',
       'Paginator'
   );
   
@@ -60,20 +60,20 @@ class AppController extends Controller {
    *
    * @return void
    */
-  public function beforeFilter()
-  {
-    //this->Auth->allow('display');
-  }
+//  public function beforeFilter()
+//  {
+//    //this->Auth->allow('display');
+//  }
     /**
    * isAuthorized method
    *
    * @param user $user
    * @return boolean
    */
-  public function isAuthorized($user)
-  {
-    return false;
-  }
+//  public function isAuthorized($user)
+//  {
+//    return false;
+//  }
   
   
 }

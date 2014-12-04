@@ -1,19 +1,15 @@
-<div class="actions">
-  <ul>
-    <?php if ($this->Session->read('Auth.User'))
-    { ?>
+<!--<div class=" collapse navbar-collapse">
+  <ul id="admin-top-ul-rigth" class="nav navbar-nav"> -->
+<?php if ($this->Session->read('Auth.User'))
+{ ?>
 
-      <li><?php echo $this->Html->link(__('Sign in'), array('controller' => 'users', 'action' => 'login')); ?></li>
-    <?php }
-    else
-    { ?>
-      <li><?php echo $this->Html->link(__('Register'), array('controller' => 'users', 'action' => 'add')); ?></li>
-  <?php } ?>
-  </ul>
+  <li ><?php echo $this->Html->link(__('Mon Profil'), array('controller' => 'users', 'action' => 'view', AuthComponent::user('id'))); ?></li>
 <?php
-if ($this->Session->read('Auth.User') && AuthComponent::user('Role.name') === 'admin')
-{
-  echo $this->element('admin_menu');
 }
-?>
-</div>
+else
+{
+  ?>
+  <li ><?php echo $this->Html->link(__('Sign in/register'), array('controller' => 'users', 'action' => 'add')); ?></li>
+<?php } ?>
+<!--</ul>
+</div>-->

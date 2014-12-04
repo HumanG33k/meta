@@ -17,14 +17,14 @@ class PrefixesController extends AppController {
  *
  * @var array
  */
-	public $helpers = array('PAginator');
+	//public $helpers = array('PAginator');
 
 /**
  * Components
  *
  * @var array
  */
-	public $components = array('Paginator', 'Acl', 'Auth', 'Security', 'Session');
+	//public $components = array('Paginator', 'Acl', 'Auth', 'Security', 'Session');
 
 /**
  * index method
